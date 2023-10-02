@@ -43,7 +43,7 @@ import { StripeModule } from 'nestjs-stripe';
 export class AppModule {}
 ```
 
-Once this is done, the `Stripe Service` will be available to inject across the entire project (without needing to import any modules), for example:
+Once this is done, the `StripeService` will be available to inject across the entire project (without needing to import any modules), for example:
 
 ```ts
 import { Injectable } from '@nestjs/common';
