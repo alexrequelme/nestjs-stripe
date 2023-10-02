@@ -6,7 +6,6 @@ import { StripeModuleOptions } from './stripe.interface';
 @Injectable()
 export class StripeService extends Stripe {
   constructor(@Inject(MODULE_OPTIONS_TOKEN) private options: StripeModuleOptions) {
-    console.log('Created StripeService');
     super(options.apiKey, options.options);
   }
 }

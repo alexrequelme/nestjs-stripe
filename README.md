@@ -21,6 +21,8 @@ pnpm add stripe
 pnpm add https://github.com/alexrequelme/nestjs-stripe.git
 ```
 
+Once the installation process is complete, we can import the `StripeModule` into the root `AppModule`.
+
 ```ts
 import { Module } from '@nestjs-common';
 import { StripeModule } from 'nestjs-stripe';
@@ -39,6 +41,18 @@ import { StripeModule } from 'nestjs-stripe';
   providers: [...],
 })
 export class AppModule {}
+```
+
+Once this is done, the `Stripe Service` will be available to inject across the entire project (without needing to import any modules), for example:
+
+```ts
+import { Injectable } from '@nestjs/common';
+import { StripeService } from 'nestjs-stripe';
+
+@Injectable()
+export class PaymentService {
+  constructor(private stripe: StripeService) {}
+}
 ```
 
 ## Author
