@@ -1,4 +1,3 @@
-// export public api from here
-// for example:
-// export * from './decorators';
-export * from './test';
+export * from './stripe.module';
+export * from './stripe.service';
+export * from './stripe.interface';
