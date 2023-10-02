@@ -18,6 +18,27 @@
 
 ```bash
 pnpm add stripe
+pnpm add https://github.com/alexrequelme/nestjs-stripe.git
+```
+
+```ts
+import { Module } from '@nestjs-common';
+import { StripeModule } from 'nestjs-stripe';
+
+@Module({
+  imports: [
+    StripeModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [stripeConfig.KEY],
+      useFactory: (config: ConfigType<typeof stripeConfig>) => ({
+        apiKey: config.secretKey,
+        options: { apiVersion: '2023-08-16' },
+      }),
+    })
+  ],
+  providers: [...],
+})
+export class AppModule {}
 ```
 
 ## Author
