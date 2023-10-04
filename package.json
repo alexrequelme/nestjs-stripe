@@ -31,7 +31,8 @@
   },
   "bugs": "https://github.com/alexrequelme/nestjs-stripe",
   "peerDependencies": {
-    "@nestjs/common": ">=10.0.0"
+    "@nestjs/common": ">=10.0.0",
+    "stripe": "^13.0.0"
   },
   "devDependencies": {
     "@nestjs/common": "^10.0.0",
